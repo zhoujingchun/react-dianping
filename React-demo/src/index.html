@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <title>Title</title>
+
+</head>
+<body>
+<div id="root">
+    <button id="button">sss</button>
+</div>
+
+<script>
+var button=document.getElementById('button');
+let timeout;
+    var f1=function () {
+        clearTimeout(timeout);
+      f2()
+
+    };
+var f2=function () {
+
+    for (var i=1;i<9;i++)
+    {
+        timeout=setTimeout((function (i) {
+            setTimeout(function () {
+                console.log(i)
+            },500*i)
+        })(i),0)
+
+
+    }
+};
+
+button.onclick=function () {
+    timeout=null;
+   f1()
+}
+
+</script>
+
+</body>
+</html>
